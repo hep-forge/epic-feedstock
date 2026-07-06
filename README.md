@@ -11,6 +11,16 @@ Builds linux-amd64 + linux-arm64 in one matrix workflow and uploads to the
 
 DD4hep Geometry Description of the ePIC Experiment
 
+## Architectures
+
+| Architecture | Latest published |
+|--------------|------------------|
+| linux-amd64 (`linux-64`) | ✅ `26.06.0` |
+| linux-arm64 (`linux-aarch64`) | ✅ `26.06.0` |
+
+_As of the last feedstock render; the badges above are live._
+
+
 ## Install
 
 ```bash
@@ -20,3 +30,4 @@ conda install -c hep-forge -c conda-forge epic
 ## Maintainers
 
 * [@meiyasan](https://github.com/meiyasan/)
+
