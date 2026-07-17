@@ -22,6 +22,14 @@ build:
   number: 0
   string: "root{{ root_tag }}"
   skip: true  # [win]
+  # No ROOT dictionary generation currently (dd4hep_add_plugin() only
+  # generates a text .components rootmap, not a dictionary pcm), but this
+  # links against ROOT/DD4hep and could grow one -- pre-emptive protection
+  # against conda-build's prefix-relocation corrupting a future
+  # lib/*.pcm, matching root-feedstock/root-plus-feedstock's fix for the
+  # identical artifact.
+  ignore_prefix_files:
+    - lib/*.pcm
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x.x") }}
 
