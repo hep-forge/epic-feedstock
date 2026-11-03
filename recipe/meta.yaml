@@ -62,7 +62,7 @@ requirements:
 
 test:
   commands:
-    - test -f "${PREFIX}/lib/libepic.so"
+    - test -f "${PREFIX}/lib/libepic.so" || test -f "${PREFIX}/lib/libepic.dylib"
     - test -f "${PREFIX}/share/epic/epic.xml"
     - test -d "${PREFIX}/share/epic/compact"
 
